@@ -48,7 +48,8 @@
 			<th>管理員帳號</th>
 			<th>雇用日期</th>
 			<th>狀態</th>
-			<th>操作</th>
+			<th>更改資料</th>
+			<th>修改密碼</th>
 		</tr>
 		
 	 
@@ -69,11 +70,14 @@
                     <input type="hidden" name="action" value="getOne_For_update">
                     <input type="submit" value="修改">
                      </form>
+                     </td>
+                     <td>
                       <form method="post" action="${pageContext.request.contextPath}/admin/admin.do" >
                     <input type="hidden" name="admId" value="${admin.admId}">
                     <input type="hidden" name="action" value="getOne_For_password">
                     <input type="submit" value="更改密碼">
                      </form>
+                     </td>
 			</tr>
 		</c:forEach>
 	</table>

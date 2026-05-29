@@ -23,7 +23,7 @@
         <input type="hidden" name="admPw" value="${adminVO.admPw}" readonly><br>
         
         <b>姓名:</b> 
-        <input type="text" name="admName" value="${adminVO.admName}"><br>
+        <input type="text" name="admName" value="${adminVO.admName}"required><br>
         
         <b>雇用日期:</b> 
         <input type="text" name="hireDate" value="${adminVO.hireDate}" readonly> (唯讀)<br>

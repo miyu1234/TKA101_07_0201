@@ -18,7 +18,7 @@
         <input type="hidden" name="admAcc" value="${adminVO.admAcc}" readonly><br>
         
         <b>密碼:</b>       
-        <input type="password" name="admPw" value="" ><br>
+        <input type="password" name="admPw" value="" required><br>
         
 
         <input type="hidden" name="admName" value="${adminVO.admName}"><br>
