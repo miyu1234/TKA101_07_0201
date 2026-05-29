@@ -39,14 +39,7 @@
 	</div>
 	<hr>
 
-	<%
-		List<AdminVO> list = (List<AdminVO>) session.getAttribute("adminList");
-		if (list == null) {
-	                out.println("<h3 class='error'>[ 提示 ]：請重新點擊首頁的查詢功能以取得資料。</h3>");
-	                 return;
-	           }
-          pageContext.setAttribute("list", list); // 存進 pageContext 讓 EL 可以用
-       %>
+
         <!--< @ include file="page1.file" %>   -->
 	<table>
 		<tr>

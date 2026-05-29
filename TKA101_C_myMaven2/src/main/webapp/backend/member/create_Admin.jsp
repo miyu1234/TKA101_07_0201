@@ -15,16 +15,16 @@
   
         
         <b>帳號:</b>  
-        <input type="text" name="admAcc" value="${adminVO.admAcc}" ><br>
+        <input type="text" name="admAcc" value="${adminVO.admAcc}"  required><br>
         <div class="error">${errorMsg}</div><br>
         <b>密碼:</b> 
-        <input type="password" name="admPw" value="${adminVO.admPw}" ><br>
+        <input type="password" name="admPw" value="${adminVO.admPw}" required><br>
         
         <b>姓名:</b> 
-        <input type="text" name="admName" value="${adminVO.admName}"><br>
+        <input type="text" name="admName" value="${adminVO.admName}"required><br>
         
         <b>雇用日期:</b> 
-        <input type="text" name="hireDate" value="${adminVO.hireDate}" > <br>
+        <input type="text" name="hireDate" value="${adminVO.hireDate}" required> <br>
         
    
         <input type="hidden" name="admStatus" value="1" ${adminVO.admStatus == 1 ? 'checked' : ''}> <br>
