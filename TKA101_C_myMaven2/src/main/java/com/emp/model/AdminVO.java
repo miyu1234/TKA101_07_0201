@@ -2,38 +2,45 @@ package com.emp.model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-
 
 @Entity
 @Table(name = "ADMIN")
 
 public class AdminVO implements Serializable {
-	@Id //PK
-	@GeneratedValue(strategy = GenerationType.IDENTITY) //AI
-	@Column(name = "ADM_ID" , updatable = false )
+	@Id // PK
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // AI
+	@Column(name = "ADM_ID", updatable = false)
 	private Integer admId;
-	
-	@Column(name = "ADM_ACC" )
+
+	@Column(name = "ADM_ACC")
 	private String admAcc;
-	
-	@Column(name = "ADM_PW" )
+
+	@Column(name = "ADM_PW")
 	private String admPw;
-	
-	@Column(name = "ADM_NAME" )
+
+	@Column(name = "ADM_NAME")
 	private String admName;
-	
-	@Column(name = "HIREDATE" )
-	private Date  hireDate;
-	
-	@Column(name = "ADM_STATUS" ) 
-	private  Byte admStatus;  //0=Disable 1 = Enable
+
+	@Column(name = "HIREDATE")
+	private Date hireDate;
+
+	@Column(name = "ADM_STATUS")
+	private Byte admStatus; // 0=Disable 1 = Enable
+
+	// ------------------FK
+	@OneToMany(mappedBy = "adminVO", fetch = FetchType.EAGER)
+	private Set<AdmPerVO> admPerVOs;
+	// -----------------FK
 
 	public AdminVO() {
 		super();
@@ -71,15 +78,14 @@ public class AdminVO implements Serializable {
 		this.admName = admName;
 	}
 
-	public Date  getHireDate() {
+	public Date getHireDate() {
 		return hireDate;
 	}
-	
+
 	public void setHireDate(Date hireDate) {
 		this.hireDate = hireDate;
-		
-	}
 
+	}
 
 	public Byte getAdmStatus() {
 		return admStatus;
@@ -89,16 +95,18 @@ public class AdminVO implements Serializable {
 		this.admStatus = admStatus;
 	}
 
-	@Override
-	public String toString() {
-		return "AdminUserVO [admId=" + admId + ", admAcc=" + admAcc + ", admPw=" + admPw + ", admName=" + admName
-				+ ", hireDate=" + hireDate + ", admStatus=" + admStatus + "]";
+	public Set<AdmPerVO> getAdmPerVOs() {
+		return admPerVOs;
 	}
 
+	public void setAdmPerVOs(Set<AdmPerVO> admPerVOs) {
+		this.admPerVOs = admPerVOs;
+	}
 
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "AdminVO [admId=" + admId + ", admAcc=" + admAcc + ", admPw=" + admPw + ", admName=" + admName
+				+ ", hireDate=" + hireDate + ", admStatus=" + admStatus + ", admPerVOs=" + admPerVOs + "]";
+	}
+
 }

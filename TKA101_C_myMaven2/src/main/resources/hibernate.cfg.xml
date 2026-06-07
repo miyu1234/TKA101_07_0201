@@ -20,6 +20,8 @@
 		<property name="hibernate.current_session_context_class">thread</property>
 
 		<mapping class="com.emp.model.AdminVO" />
+		<mapping class="com.emp.model.AdmFuncVO" /> 
+		<mapping class="com.emp.model.AdmPerVO" /> 
 
 	</session-factory>
 </hibernate-configuration>

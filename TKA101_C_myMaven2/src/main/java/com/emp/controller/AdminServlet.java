@@ -177,7 +177,7 @@ public class AdminServlet extends HttpServlet {
 					req.getRequestDispatcher("/backend/login.jsp").forward(req, res);
 				}else {
 					req.setAttribute("adminVO", adminVO);
-					String url = "/backend/member/listOneAdmin.jsp"; 
+					String url = "/backend/member/admin_index.jsp"; 
 				    RequestDispatcher successView = req.getRequestDispatcher(url);
 				    successView.forward(req, res);
 				}
@@ -186,4 +186,7 @@ public class AdminServlet extends HttpServlet {
 			
 		
 }//doPost
+		public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		    doPost(req, res);
+		}
 }//c

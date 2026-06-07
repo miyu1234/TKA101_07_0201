@@ -48,6 +48,7 @@
 			<th>管理員帳號</th>
 			<th>雇用日期</th>
 			<th>狀態</th>
+			<th>擁有權限</th>
 			<th>更改資料</th>
 			<th>修改密碼</th>
 		</tr>
@@ -63,6 +64,11 @@
 				<td>${admin.admAcc}</td>
 				<td>${admin.hireDate}</td>
 				 <td>${admin.admStatus == 1 ? '啟用' : '停用'}</td>
+				 <td>
+					    <c:forEach var="per" items="${admin.admPerVOs}">
+					        【${per.admfuncVO.funcName}】<br>
+					    </c:forEach>
+				</td>
 				<td>
                 <!-- 修改按鈕表單 -->
                 <form method="post" action="${pageContext.request.contextPath}/admin/admin.do" >
