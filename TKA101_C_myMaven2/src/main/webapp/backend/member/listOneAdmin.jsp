@@ -31,7 +31,7 @@
     </div>
 
     <div class="back-link">
-        <a href="${pageContext.request.contextPath}/backend/index.jsp">回首頁</a>
+        <a href="${pageContext.request.contextPath}/backend/member/admin_index.jsp">回首頁</a>
     </div>
 </body>
 </html>

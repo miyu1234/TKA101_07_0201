@@ -18,7 +18,7 @@
 
 
 		<a
-			href="${pageContext.request.contextPath}/admin/admin.do?action=getAll">所有管理員列表
+			href="${pageContext.request.contextPath}/backend/member/admin_index.jsp">所有管理員列表
 		</a>
 	
 

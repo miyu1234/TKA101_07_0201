@@ -89,7 +89,7 @@
 	</table>
 
     <div class="back-link"  >
-     <h3>   <a href="${pageContext.request.contextPath}/backend/index.jsp">回首頁</a> </h3>
+     <h3>   <a href="${pageContext.request.contextPath}/backend/member/admin_index.jsp">回首頁</a> </h3>
     </div>
 </body>
 </html>
