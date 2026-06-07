@@ -13,6 +13,6 @@ public interface AdminDAO_interface {
 	
 	public void resetAdminPw(Integer admId, String newPw); //更改密碼
 	public AdminVO findByAcc(String admAcc) ;
-	
+	public AdminVO Loginasadmin(String admAcc, String admPw);
 	
 }

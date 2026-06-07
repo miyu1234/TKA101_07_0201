@@ -1,10 +1,15 @@
 package com.emp.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.emp.model.AdminDAO;
 import com.emp.model.AdminDAO_interface;
 import com.emp.model.AdminVO;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 public class AdminService {
 	
@@ -64,6 +69,23 @@ public class AdminService {
 	    return adminVO;
 	}
 	
+	public AdminVO Loginasadmin(String admAcc, String admPw) {
+		
+		AdminVO adminvo = dao.Loginasadmin(admAcc, admPw);
+		if (adminvo == null) {
+			return null;
+		}
+			return adminvo;
+				
+	}
+	
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException {
+		doGet(req, res);
+	}
+	
+
 	
 	
 }

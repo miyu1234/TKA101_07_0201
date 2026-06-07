@@ -118,6 +118,26 @@ public class AdminDAO implements AdminDAO_interface {
 		}	
 	}
 
+	@Override
+	public AdminVO Loginasadmin(String admAcc, String admPw) {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		 try {
+			session.beginTransaction();
+			AdminVO adminVO = session.createQuery("from AdminVO where admAcc =:admAcc and admPw = :admPw", AdminVO.class) //這行已經 查帳密是否正確
+					.setParameter("admAcc", admAcc)
+					.setParameter("admPw", admPw)
+					.uniqueResult();
+			//寫個觀念HQL裡面的 :admPw = setParameter裡面的"admPw" 
+			session.getTransaction().commit();;
+			
+					return adminVO;
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+			 throw new RuntimeException("登入 失敗", e);
+		}
+
+	}
+
 
 	
         

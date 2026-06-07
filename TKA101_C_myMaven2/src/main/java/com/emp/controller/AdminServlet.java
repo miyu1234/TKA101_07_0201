@@ -17,8 +17,6 @@ import jakarta.servlet.http.HttpServletResponse;
 public class AdminServlet extends HttpServlet {
 		private AdminService  adminService;
 
-
-
 		public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 			req.setCharacterEncoding("UTF-8"); //for 中文字
@@ -127,6 +125,7 @@ public class AdminServlet extends HttpServlet {
 			    successView.forward(req, res);
 			    
 			}
+			//create_admin
 			if ("create_admin".equals(action)) {
 				String admAcc = req.getParameter("admAcc"); 
 				String admPw = req.getParameter("admPw");
@@ -163,15 +162,28 @@ public class AdminServlet extends HttpServlet {
 			    
 			}
 				
+			//loginasadmin
+			if("loginasadmin".equals(action)) {
+				String admacc = req.getParameter("admacc").trim();
+				String admPw = req.getParameter("admPw").trim();
+				
+				AdminService adminservice = new AdminService();
+				AdminVO adminVO = adminservice.Loginasadmin(admacc, admPw);
+				if (adminVO == null) {
+					req.setAttribute("errorMsg", "帳號或密碼錯誤");
+					req.getRequestDispatcher("/backend/login.jsp").forward(req, res);
+				} else if (adminVO.getAdmStatus() == 0) {
+					req.setAttribute("errorMsg", "帳號已被停權");
+					req.getRequestDispatcher("/backend/login.jsp").forward(req, res);
+				}else {
+					req.setAttribute("adminVO", adminVO);
+					String url = "/backend/member/listOneAdmin.jsp"; 
+				    RequestDispatcher successView = req.getRequestDispatcher(url);
+				    successView.forward(req, res);
+				}
+				
 			}
 			
 		
-		
-		public void doGet(HttpServletRequest req, HttpServletResponse res)
-				throws ServletException, IOException {
-			doPost(req, res);
-		}
-		
-		
-		
-}
+}//doPost
+}//c
