@@ -39,8 +39,6 @@
 	</div>
 	<hr>
 
-
-        <!--< @ include file="page1.file" %>   -->
 	<table>
 		<tr>
 			<th>管理員編號</th>
@@ -65,7 +63,7 @@
 				<td>${admin.hireDate}</td>
 				 <td>${admin.admStatus == 1 ? '啟用' : '停用'}</td>
 				 <td>
-					    <c:forEach var="per" items="${admin.admPerVOs}">
+					    <c:forEach var="per" items="${admin.admPerVO}">
 					        【${per.admfuncVO.funcName}】<br>
 					    </c:forEach>
 				</td>

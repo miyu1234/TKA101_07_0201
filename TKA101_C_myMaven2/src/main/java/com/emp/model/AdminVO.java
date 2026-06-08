@@ -39,7 +39,7 @@ public class AdminVO implements Serializable {
 
 	// ------------------FK
 	@OneToMany(mappedBy = "adminVO", fetch = FetchType.EAGER)
-	private Set<AdmPerVO> admPerVOs;
+	private Set<AdmPerVO> admPerVO;
 	// -----------------FK
 
 	public AdminVO() {
@@ -95,18 +95,18 @@ public class AdminVO implements Serializable {
 		this.admStatus = admStatus;
 	}
 
-	public Set<AdmPerVO> getAdmPerVOs() {
-		return admPerVOs;
+	public Set<AdmPerVO> getAdmPerVO() {
+		return admPerVO;
 	}
 
-	public void setAdmPerVOs(Set<AdmPerVO> admPerVOs) {
-		this.admPerVOs = admPerVOs;
+	public void setAdmPerVO(Set<AdmPerVO> admPerVO) {
+		this.admPerVO = admPerVO;
 	}
 
 	@Override
 	public String toString() {
 		return "AdminVO [admId=" + admId + ", admAcc=" + admAcc + ", admPw=" + admPw + ", admName=" + admName
-				+ ", hireDate=" + hireDate + ", admStatus=" + admStatus + ", admPerVOs=" + admPerVOs + "]";
+				+ ", hireDate=" + hireDate + ", admStatus=" + admStatus + ", admPerVOs=" + admPerVO+ "]";
 	}
 
 }

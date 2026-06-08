@@ -17,7 +17,7 @@ public class AdminService {
 	private AdminDAO_interface dao;
 	
 	public AdminService() {
-		dao =  new AdminDAO ();
+		dao =  new AdminDAO();
 	}
 	
 	

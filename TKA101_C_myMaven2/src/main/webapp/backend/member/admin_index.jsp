@@ -20,6 +20,10 @@
 		<a
 			href="${pageContext.request.contextPath}/admin/admin.do?action=getAll">所有管理員列表
 		</a>
+		<br>
+		<a
+			href="${pageContext.request.contextPath}/admin/adminPer.do?action=getAllPer">所有管理權限
+		</a>
 	<br>
 		<a href="${pageContext.request.contextPath}/backend/member/create_Admin.jsp">新增管理員
 		</a>

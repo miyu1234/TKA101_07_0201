@@ -46,7 +46,7 @@ public class AdminDAO implements AdminDAO_interface {
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
-			List<AdminVO> list = session.createQuery("from AdminVO where admStatus = :admstatus", AdminVO.class).setParameter("admstatus", admStatus).getResultList();
+			List<AdminVO> list = session.createQuery("from AdminVO where admStatus = :admStatus", AdminVO.class).setParameter("admStatus", admStatus).getResultList();
 			session.getTransaction().commit();
 			return list;
 		}catch(Exception e) {
